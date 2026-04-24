@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Apis</title>
+</head>
+<body>
+<h2>Listado de apis</h2>
+
+<p><a th:href="@{/new}">Nueva API</a></p>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>#</th>
+        <th>Nombre</th>
+        <th>Versión</th>
+        <th>Fecha de Registro</th>
+        <th>Estado</th>
+        <th>Equipo responsable</th>
+        <th>Editar</th>
+    </tr>
+    <tr th:each="a : ${apis}">
+        <td th:text="${a.id}"></td>
+        <td th:text="${a.nombre}"></td>
+        <td th:text="${a.version}"></td>
+        <td th:text="${a.fecha_registro}"></td>
+        <td th:text="${a.estado}"></td>
+        <td th:text="${a.equipo.nombre}"></td>
+        <td>Nada por ahora</td>
+    </tr>
+</table>
+</body>
+</html>
